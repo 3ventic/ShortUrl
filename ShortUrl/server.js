@@ -69,7 +69,7 @@ http.createServer(function (req, res)
                     }
                     else
                     {
-                        db.get('SELECT MAX(rowid) FROM links', function (err, row)
+                        db.get('SELECT MAX(rowid) AS rowid FROM links', function (err, row)
                         {
                             if (err)
                             {
