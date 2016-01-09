@@ -79,8 +79,8 @@ http.createServer(function (req, res)
                             }
                             else
                             {
-                                console.log("Existing " + row.path);
-                                if (row.path)
+                                console.log("Existing " + (row ? row.path : "none"));
+                                if (row && row.path)
                                 {
                                     res.writeHead(200, { 'Content-Type': 'application/json' });
                                     res.end(JSON.stringify({
