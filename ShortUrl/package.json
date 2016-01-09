@@ -1,0 +1,13 @@
+{
+  "name": "ShortUrl",
+  "version": "0.0.0",
+  "description": "ShortUrl",
+  "main": "server.js",
+  "author": {
+    "name": "Werner",
+    "email": ""
+  },
+  "dependencies": {
+    "sqlite3": "^3.1.1"
+  }
+}
