@@ -69,7 +69,9 @@ http.createServer(function (req, res)
                     }
                     else
                     {
-                        db.get('SELECT MAX(rowid) AS rowid FROM links', function (err, row)
+                        db.get('SELECT path FROM links WHERE destination = $destination', {
+                            $destination: target
+                        }, function (err, row)
                         {
                             if (err)
                             {
@@ -77,8 +79,31 @@ http.createServer(function (req, res)
                             }
                             else
                             {
-                                console.log(row.rowid);
-                                newLink(res, numToPath((row.rowid || -1) + 1), target);
+                                console.log("Existing " + row.path);
+                                if (row.path)
+                                {
+                                    res.writeHead(200, { 'Content-Type': 'application/json' });
+                                    res.end(JSON.stringify({
+                                        status: 200,
+                                        short: config.base_url + path,
+                                        destination: target
+                                    }));
+                                }
+                                else
+                                {
+                                    db.get('SELECT MAX(rowid) AS rowid FROM links', function (err, row)
+                                    {
+                                        if (err)
+                                        {
+                                            returnError(res, 500, "SQL Error");
+                                        }
+                                        else
+                                        {
+                                            console.log(row.rowid);
+                                            newLink(res, numToPath((row.rowid || -1) + 1), target);
+                                        }
+                                    });
+                                }
                             }
                         });
                     }
