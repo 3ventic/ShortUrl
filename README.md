@@ -1,5 +1,5 @@
 # ShortUrl
-For easy use with ShareX
+For easy use with [ShareX](https://getsharex.com/)
 
 ## Installation
 
