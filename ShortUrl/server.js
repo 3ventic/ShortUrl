@@ -212,7 +212,7 @@ function escapeHtml(text)
 function getFrontPageHtml(callback)
 {
     var html = '<!DOCTYPE html><html><head><meta charset="utf-8" /><title>Shorten Link</title></head><body>' +
-        '<form  action="/new" method="GET"><input type="hidden" name="secret" value="' + config.secret +
+        '<form  action="' + config.base_url + 'new" method="GET"><input type="hidden" name="secret" value="' + config.secret +
         '" /><input type="text" name="path" placeholder="(optional) path" /><input type="url" name="target" placeholder="target" /><input name="submit" type="submit" value="Create" /></form><ul>';
     
     db.each("SELECT rowid AS id, path, destination, used FROM links", function (err, row)
