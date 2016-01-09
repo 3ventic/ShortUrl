@@ -135,7 +135,7 @@ http.createServer(function (req, res)
             {
                 res.writeHead(301, { Location: row.destination });
                 res.end();
-                db.run('UPDATE links SET used = used + 1 WHERE $path', {
+                db.run('UPDATE links SET used = used + 1 WHERE path = $path', {
                     $path: path
                 });
             }
