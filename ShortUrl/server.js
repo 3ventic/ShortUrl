@@ -77,6 +77,7 @@ http.createServer(function (req, res)
                             }
                             else
                             {
+                                console.log(row.rowid);
                                 newLink(res, numToPath((row.rowid || -1) + 1), target);
                             }
                         });
