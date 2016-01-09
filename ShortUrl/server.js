@@ -90,7 +90,7 @@ http.createServer(function (req, res)
     }
     else if (url_params.pathname.length < 2)
     {
-        returnError(res, 403, "Forbidden to access /");
+        returnError(res, 200, "Forbidden to access /");
     }
     else
     {
