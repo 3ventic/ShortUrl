@@ -122,7 +122,7 @@ http.createServer(function (req, res)
     {
         var path = url_params.pathname.substring(1);
         // Follow redirect
-        db.get('SELECT destination FROM links WHERE path LIKE $path', {
+        db.get('SELECT destination FROM links WHERE path = $path', {
             $path: path
         }, function (err, row)
         {
@@ -180,7 +180,7 @@ function newLink(res, path, target)
         }
         else
         {
-            db.run('UPDATE links SET destination = $destination WHERE path LIKE $path', {
+            db.run('UPDATE links SET destination = $destination WHERE path = $path', {
                 $path: path,
                 $destination: target
             }, function (err)
