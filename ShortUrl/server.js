@@ -138,7 +138,7 @@ http.createServer(function (req, res)
             else
             {
                 res.writeHead(301, { 'Content-Type': 'text/html', Location: row.destination });
-                res.end();
+                res.end('<script type="text/javascript">window.location.href="' + row.destination + '";</script><a href="' + row.destination + '">Click here to follow redirect.</a>');
                 db.run('UPDATE links SET used = used + 1 WHERE path = $path', {
                     $path: path
                 });
