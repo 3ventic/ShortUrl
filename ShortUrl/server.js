@@ -131,9 +131,13 @@ http.createServer(function (req, res)
                 console.log(err);
                 returnError(res, 500, "SQL Error");
             }
+            else if (!row || !row.destination)
+            {
+                returnError(res, 404, "Not Found");
+            }
             else
             {
-                res.writeHead(301, { Location: row.destination });
+                res.writeHead(301, { 'Content-Type': 'text/html', Location: row.destination });
                 res.end();
                 db.run('UPDATE links SET used = used + 1 WHERE path = $path', {
                     $path: path
