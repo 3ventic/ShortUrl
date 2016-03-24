@@ -136,7 +136,7 @@ var validChars = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890
 function numToPath(num) {
     if (num < validChars.length)
         return validChars[num];
-    return numToPath(num / validChars.length) + numToPath(num % validChars.length);
+    return numToPath(Math.floor(num / validChars.length)) + numToPath(num % validChars.length);
 }
 
 function returnError(res, code, message) {
