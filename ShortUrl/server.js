@@ -153,6 +153,7 @@ function newLink(res, path, target) {
             target = "http://" + target;
         }
         var targetparts = url.parse(target);
+        console.log(target, JSON.stringify(targetparts));
         path = targetparts.hostname + "/" + path;
     }
     db.run('INSERT OR IGNORE INTO links VALUES ($path, $destination, 0)', {
