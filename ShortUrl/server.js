@@ -148,6 +148,10 @@ function returnError(res, code, message) {
 }
 
 function newLink(res, path, target) {
+    if (config.includeHostInPath) {
+        var targetparts = url.parse(target);
+        path = targetparts.hostname + "/" + path;
+    }
     db.run('INSERT OR IGNORE INTO links VALUES ($path, $destination, 0)', {
         $path: path,
         $destination: target

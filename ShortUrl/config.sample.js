@@ -6,7 +6,10 @@
     port: 8000,
     
     // Secret required to list and create short links
-    secret: ''
+    secret: '',
+    
+    // Include hostname in the shortened URL, i.e. https://link.example.com/3v.fi/Oogis
+    includeHostInPath: false
 };
 
 module.exports = config;
