@@ -149,6 +149,9 @@ function returnError(res, code, message) {
 
 function newLink(res, path, target) {
     if (config.includeHostInPath) {
+        if (!/^[a-z0-9]+:\/\//.test(target)) {
+            target = "http://" + target;
+        }
         var targetparts = url.parse(target);
         path = targetparts.hostname + "/" + path;
     }
