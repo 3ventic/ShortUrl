@@ -4,6 +4,9 @@
     
     // Port to run the server on
     port: 8000,
+     
+    // Hostname to bind the server to
+    host: '0.0.0.0',
     
     // Secret required to list and create short links
     secret: '',
