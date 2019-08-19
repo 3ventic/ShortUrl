@@ -21,7 +21,7 @@ Edit & import (in whatever order) to ShareX custom uploaders after installing.
   "FileFormName": "",
   "Arguments": {
     "secret": "super secret passphrase from config.js",
-    "target": "%input"
+    "target": "$input$"
   },
   "Headers": {},
   "ResponseType": "Text",

@@ -4,6 +4,7 @@ var qs = require('querystring');
 var sqlite3 = require('sqlite3').verbose();
 var config = require('./config.js');
 var port = config.port || 8000;
+var host = config.host || '0.0.0.0';
 
 console.log("Starting app");
 
@@ -109,7 +110,7 @@ http.createServer(function (req, res) {
             }
         });
     }
-}).listen(port);
+}).listen(port, host);
 console.log("Starting HTTP");
 
 function generateNewLinkPath(res, target) {
