@@ -26,4 +26,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: 3ventic/ShortUrl:latest
+          tags: 3ventic/sharex-short-url:latest
