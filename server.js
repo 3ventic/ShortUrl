@@ -9,7 +9,7 @@ var host = config.host || "0.0.0.0"
 console.log("Starting app")
 
 var db = new sqlite3.Database(
-	"links.db",
+	`${process.env.DATA_PATH}links.db`,
 	sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE,
 	function (err) {
 		if (err) {

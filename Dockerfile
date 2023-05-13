@@ -9,4 +9,6 @@ COPY LICENSE .
 
 RUN npm ci
 
+ENV DATA_PATH "/data/"
+
 CMD ["node", "server.js"]

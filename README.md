@@ -3,6 +3,13 @@ For easy use with [ShareX](https://getsharex.com/)
 
 ## Installation
 
+### Docker
+
+- Create config.js using the sample
+- Mount /data folder when running `3ventic/ShortUrl:latest` for data persistence
+
+### System
+
 - Clone repo
 - Copy config.sample.js to config.js
 - Edit config.js
