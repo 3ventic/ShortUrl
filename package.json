@@ -1,13 +1,12 @@
 {
-  "name": "ShortUrl",
-  "version": "1.0.1",
-  "description": "ShortUrl",
-  "main": "server.js",
-  "author": {
-    "name": "Werner",
-    "email": ""
-  },
-  "dependencies": {
-    "sqlite3": "^5.1.6"
-  }
+	"name": "sharex-short-url",
+	"version": "1.1.0",
+	"description": "ShortUrl",
+	"main": "server.js",
+	"author": {
+		"name": "3ventic"
+	},
+	"dependencies": {
+		"sqlite3": "^5.1.6"
+	}
 }
